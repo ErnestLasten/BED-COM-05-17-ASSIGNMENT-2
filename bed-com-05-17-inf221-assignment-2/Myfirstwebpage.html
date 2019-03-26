@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang = "en"/>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>MY WEBPAGE</title>
+        <link rel="stylesheet" type="text/css" href="firstcss.css" />
+
+        <style>
+          body {margin:0;}
+          ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:rgb(75, 150, 14);
+          }
+          
+          ul.topnav li {float: left;}
+          
+          ul.topnav li a {
+            display: inline-block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 17px;
+          }
+          
+          ul.topnav li a:hover {background-color: blue;}
+          
+          ul.topnav li.icon {display: none;}
+          
+          @media screen and (max-width:680px) {
+            ul.topnav li:not(:first-child) {display: none;}
+            ul.topnav li.icon {
+              float: right;
+              display: inline-block;
+            }
+          }
+          
+          @media screen and (max-width:680px) {
+            ul.topnav.responsive {position: relative;}
+            ul.topnav.responsive li.icon {
+              position: absolute;
+              right: 0;
+              top: 0;
+            }
+            ul.topnav.responsive li {
+              float: none;
+              display: inline;
+            }
+            ul.topnav.responsive li a {
+              display: block;
+              text-align: left;
+            }
+          }
+          </style>
+          </head>
+          <body>
+          
+          <ul class="topnav" id="myTopnav">
+            <li><a class="active" href="index4.html">Home</a></li>
+            <li><a href="index4.html">             News</a></li>
+            <li><a href="index4.html">          Contact</a></li>
+            <li><a href="index4.html">        About</a></li>
+            <li class="icon">
+              <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+            </li>
+          </ul>
+          
+          <div style="padding-left:16px">
+            
+        
+          </div>
+          <a href="index4.html"></a>
+          <script>
+          function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "topnav") {
+                  x.className += " responsive";
+              } else {
+                  x.className = "topnav";
+              }
+          }
+          </script>
+          
+
+    
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <header>
+                <img src="erne.jpg" alt ="Ernest Lasten's photograph" height="250" width="200" style="border-radius: 30%" />
+                <p>Lasten Ernest</p>
+            </header>
+              
+            <h3 align ="center">HERE IS THE LIST OF PROGRAMMES THAT I DEVELOPED</h3>
+            <div class="project_items">
+                        <div class="img">
+                            <a target="_blank" href="fjords.jpg">
+                              <img src="recipe.jpg" alt="Fjords">
+                            </a>
+                            <div class="desc_items">Restuarant Recipe</div>
+                          </div>
+
+                          <div class="img">
+                                <a target="_blank" href="fjords.jpg">
+                                  <img src="calculator.jpg" alt="Fjords">
+                                </a>
+                                <div class="desc_items">Basic Calculator</div>
+                              </div>
+
+                              <div class="img">
+                                    <a target="_blank" href="fjords.jpg">
+                                      <img src="books.jpg" alt="Fjords">
+                                    </a>
+                                    <div class="desc_items">Library Book Sorting</div>
+                                  </div>
+
+                                  <div class="img">
+                                        <a target="_blank" href="fjords.jpg">
+                                          <img src="website.jpg" alt="Fjords">
+                                        </a>
+                                        <div class="desc_items">Website Development</div>
+                                      </div>
+                                      <br>
+                          
+            </div>
+            <br><br>
+
+            <a href="tryingthis.html">click here to see the details</a>
+            <fieldset><div>
+
+
+              <fieldset><div id="display"> </div>
+              
+              
+                  <form method="post">
+                          <fieldset align = "center" style="border:3px solid red; width: 30%; display: block; position:absolute; left: 30%;">
+                              
+                              <label class ="project">Name of the project</label><br>
+                              
+                              <input type="text" id="userproject" name="your projects"><br>
+                              
+                              <label for="StartingDate">Starting date</label><br>
+                              <input type="date"  id="start" name="start date"><br>
+                                  
+                              
+                              <label for="EndingDate">Ending date</label><br>
+                              <input type="date"  id="end" name="end date" ><br>
+                                  
+                              <label for="descr">Project Description</label><br>
+                              
+                              <textarea name="message" id="mess" cols="16"></textarea>
+                              <br>
+                              
+                                  
+                              <button onclick="return k()">submit</button>
+                              
+                               </fieldset>
+                  
+              </form>
+                 
+                         
+                          
+                              <script>
+                                 
+                                  function k(){
+          
+          
+                                      // validating
+                      if(document.getElementById("userproject").value == ""){
+                       alert("Ooops, project name field is not filled! Please, fill in the data to proceed"); return false;
+                              
+                              }
+                      if(document.getElementById("start").value == ""){
+                              alert("Ooops, startind date field is not filled! Please, indicate the date to proceed"); return false;
+                              } 
+                      if(document.getElementById("end").value == "" || document.getElementById("end").value == "null"){
+                              alert("Ooops, ending date is not indicated! Please, indicate end date to proceed"); return false;
+                              }
+                      if(document.getElementById("mess").value == "" || document.getElementById("mess").value == "null"){
+                              alert("Ooops! enter project description to proceeed"); return false;
+                              }
+          
+          
+                                  
+                      // Checking browser support
+                      var result;
+                      if (typeof(Storage) !== "undefined") {
+          
+                   // Storing data in local storage
+                                              
+                                              
+                  var userProject =  document.getElementById("userproject").value;
+                  localStorage.projectName = userProject;
+                                              
+                                          
+                  var start =  document.getElementById("start").value;
+                  localStorage.startdate = start;
+                                              
+                  var end =  document.getElementById("end").value;
+                  localStorage.enddate = end;
+                                              
+                  var explaination =  document.getElementById("mess").value;
+                  localStorage.messages= explaination;
+          
+          
+                //creating an element to display the stored data that is in local storage.
+                  var element = document.createElement("display");
+                  
+                  // now to retrieve the data from local storage
+                  var retrieve = localStorage.userProject;
+                  var node = document.createTextNode(localStorage.userProject);
+                  
+                  element.appendChild(node);
+          
+                  // adding an event listener 
+                  element.addEventListener('click',function(){
+                      document.write('Name of the project: '+localStorage.userproject); // displaying project name
+                      document.write('  ');
+                      document.write('Starting date: '   +localStorage.start);// displaying Description
+                      document.write('Ending date: '   +localStorage.end); // displaying date 
+                      }
+                  );
+          
+                  // adding an event listener                     
+                  element.addEventListener('mouseover',function(){
+                      para.style.border="3px solid yellow";                        
+                      }
+                  )
+                  // creating another element
+                  var elementi = document.getElementById("display");
+                  elementi.appendChild(element);
+          
+              // clearing the fields after retrieving data in loca storage 
+              if(document.getElementById("userproject").value !== "")
+                      document.getElementById("userproject").value="";
+                     
+              // clearing the field after the data has been stored to local storage to enter the next input for description
+             if(document.getElementById("start").value !== "")
+              var input = document.getElementById("start");
+                      document.getElementById("start").value="";
+          
+             // clearing the field after the data has been stored to local storage to enter the next input for completion date
+             if(document.getElementById("end").value !== "")
+              var input = document.getElementById("end");
+                      document.getElementById("end").value="";   
+          
+              if(document.getElementById("mess").value !== "")
+              var input = document.getElementById("mess");
+                      document.getElementById("mess").value="";             
+            }
+          
+        
+                            
+              else {
+                  //document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+              }
+          }
+                              
+          </script>
+
+
+          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        
+            <footer>
+                    <strong>
+                      <p style="font-size: xx-large; font-weight: bold">Work experience</p>
+                      <br />
+                    I developed a website for the National Romours newspaper limited. <br />
+                    I have worked as website desiner and developer at Modern WORLD Cooperation.
+                    where we developbred some web appas. <br><hr/><br><br><br>
+    
+            </div>
+            <br><hr>
+              <footer> <marquee behavior ="move" position ="right" >Copyright © LASTEN ERNEST </marquee> </footer>
+       
+              <div id="displa"> </div>
+              
+                  <form method="post">
+                          <fieldset align = "center" style="border:3px solid red; width: 30%; display: block; position:absolute; left: 30%;">
+                              
+                              <label class ="experience" id = "experience">EXPERIENCE DESCRIPTION</label><br>
+                                                           
+                              <input type="text" id="userproject" name="your projects"><br>
+                              
+                                                                                                          <label for="date">Ending date</label><br>
+                              <input type="date"  id="date" name="end date" ><br>
+                                
+                    <br>
+                                                          
+                  <button onclick="return it()">submit</button>
+                              
+                               </fieldset>
+                  
+              </form>
+                         
+                              <script>
+                        
+          
+                                  
+                      // Checking browser support
+                      if (typeof(Storage) !== "undefined") {
+          
+                   // Storing data in local storage
+                                              
+                                              
+                  var experience =  document.getElementById("experience").value;
+                  localStorage.experience = experience;
+                                              
+                                          
+                  var date =  document.getElementById("date").value;
+                  localStorage.date = date;
+                                                                                          
+                
+                //creating an element to display the stored data that is in local storage.
+                  var element = document.createElement("element");
+                  
+                  // now to retrieve the data from local storage
+                  var retrieve = localStorage.experience;
+                  var node = document.createTextNode(localStorage.experience);
+                  
+                  element.appendChild(node);
+          
+                  // adding an event listener 
+                  element.addEventListener('click',function(){
+                      document.write('Your experience: '+localStorage.experience); // displaying user experience
+                      document.write('  ');
+                      document.write('date: '   +localStorage.date); // displaying date 
+                      }
+                  );
+          
+                  // adding an event listener                     
+                  element.addEventListener('mouseover',function(){
+                                          
+                      }
+                  )
+                  // creating another element
+                 // var elementi = document.getElementById(display);
+                 // elementi.appendChild(elementi);
+          
+              // clearing the fields after retrieving data in loca storage 
+              if(document.getElementById("userproject").value !== "")
+                      document.getElementById("userproject").value="";
+                     
+              // clearing the field after the data has been stored to local storage to enter the next input for description
+             if(document.getElementById("start").value !== "")
+              var input = document.getElementById("start");
+                      document.getElementById("start").value="";
+          
+             // clearing the field after the data has been stored to local storage to enter the next input for completion date
+             if(document.getElementById("end").value !== "")
+              var input = document.getElementById("end");
+                      document.getElementById("end").value="";   
+          
+              if(document.getElementById("mess").value !== "")
+              var input = document.getElementById("mess");
+                      document.getElementById("mess").value="";             
+            }
+          
+        
+  		  
+                                
+              else {
+                  document.getElementById("display").innerHTML = "Sorry, your browser does not support Web Storage...";
+            }
+                         
+          </script>
+               
+               <br>
+    </body>
+</html>
